@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       
-      home: Text('This is Text Widget,'),
+      home:Image(image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/4/49/Koala_climbing_tree.jpg'),),
     );
   }
 }
