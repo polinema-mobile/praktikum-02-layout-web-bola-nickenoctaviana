@@ -5,45 +5,59 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  build(context) {
+  // This widget is the root of your application.
+  @override  Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
+      
+      home: Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red[800],
+        backgroundColor: Colors.red,
         title: Text('MyApp'),
       ),
-      body: ListView(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              FlatButton(
-                child: Text("BERITA TERBARU"),
+      body: Column(
+        children: [
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children:[
+                FlatButton(
+                  child: Text('BERITA TERBARU'),
+                ),
+                 FlatButton(
+                  child: Text('PERTANDINGAN HARI INI'),
+                ),
+              ],
+            ),
+            ),
+        SizedBox(),
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.purple.withOpacity(0.5))
               ),
-              FlatButton(
-                child: Text("PERTANDINGAN HARI INI"),
-              )
-            ],
-          ),
-          Container(
-            child: Image.network(
-                'https://i2-prod.football.london/incoming/article19603985.ece/ALTERNATES/s615/1_GettyImages-1292162465.jpg'),
-          ),
-          Container(
-            height: 40,
-            child: const Center(
-                child: Text(
-              'Costa Mendekat ke Palmeiras',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            )),
-          ),
-          Container(
-            height: 50,
-            color: Colors.purple[300],
-            child: Text('Transfer'),
-          ),
-        ],
-      ),
-    ));
+              child: Column(
+                children: [
+                  Image.network('https://i2-prod.football.london/incoming/article19603985.ece/ALTERNATES/s615/1_GettyImages-1292162465.jpg'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Text('Costa Mendekat ke Palmeiras',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    height: 50,
+                    color: Colors.purple[300],
+                    child: Text('Transfer'),
+                  ),
+                ],
+                ),
+                
+            ),
+                ]
+              ),
+            )
+            );
   }
 }
