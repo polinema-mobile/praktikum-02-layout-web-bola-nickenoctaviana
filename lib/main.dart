@@ -17,20 +17,23 @@ class MyApp extends StatelessWidget {
       body: SingleChildScrollView(
         child: 
           Container(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(5),
             child: Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.only(top: 2),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children:[
+                  children:[              
                     FlatButton(
-                      child: Text('BERITA TERBARU'),
+                      onPressed: () {},
+                      child: Text('BERITA TERBARU'),                    
                     ),
                      FlatButton(
+                       onPressed: () {},
                       child: Text('PERTANDINGAN HARI INI'),
                     ),
+                   
                   ],
                 ),
                 ),
@@ -50,20 +53,24 @@ class MyApp extends StatelessWidget {
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
                         ),
                       ),
+                      
                       Container(
                         alignment: Alignment.centerLeft,
                         height: 50,
                         color: Colors.purple[300],
+                        child: Padding(
+                        padding: const EdgeInsets.all(8.0),
                         child: Text('Transfer'),
+                      ),
                       ),
                     ],
                     ),
                 ),
                 SizedBox(),
                 Container(
-                  margin: EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blueGrey.withOpacity(0.5))
+                    border: Border.all(color: Colors.purple.withOpacity(0.5))
                   ),
                   child: Column(
                     children: [
@@ -78,16 +85,27 @@ class MyApp extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Image.network('https://statik.tempo.co/data/2018/11/25/id_799423/799423_720.jpg'),
-                          Text('Pique Bilang Wasit Untungkan Madrid, \n Koeman Tepok Jidat'),
+                          Expanded(
+                            child: Image.network('https://statik.tempo.co/data/2018/11/25/id_799423/799423_720.jpg'),
+                          ),
+                          Expanded(
+                          child: FlatButton(
+                            onPressed: () {},
+                          child: Text('Pique Bilang Wasit Untungkan Madrid, Koeman Tepok Jidat'),
+                          )
+                          ),
                       ],
                       ),
                       ),
                       Container(
                         alignment: Alignment.centerLeft,
-                        height: 30,
-                        child: Text('Barcelona Feb 13, 2021'),)
-                ],
+                        height: 35,
+                        child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Barcelona Feb 13, 2021'),
+                        ),
+                      ),
+                    ]
               ),
               ),
               ],
